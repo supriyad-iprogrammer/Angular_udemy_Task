@@ -6,22 +6,9 @@
 </div>
 <hr>
 <div class="row">
-  <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let a of receipe">
-<div  class="row">
-  <div class="col-md-8">
-    <h4 class="list-group-item-heading">{{a.name}}</h4>
-    <p class="list-group-item-text">{{a.desc}}</p>
+  <div class="col-xs-12" >
 
-  </div>
-<div class="col-md-4" style="text-align: center;">
-
-    <img [src]="a.imagepath" alt="{{a.name}}" class="img-responsive" style="max-height: 50px;">
-
-</div>
-</div>
-
-       </a>
-    <app-receipe-item></app-receipe-item>
+    <app-receipe-item  *ngFor="let recEl of receipe"
+    [rec]="recEl"> </app-receipe-item>
     </div>
 </div>

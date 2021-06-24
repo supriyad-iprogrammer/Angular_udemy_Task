@@ -8,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingListComponent implements OnInit {
 ingrediant: Ingredints[]=[
-  new Ingredints('apple',5)
+  new Ingredints('apple','10')
 ];
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  // ondata(data:{name:string,ammount:string}){
+  //   this.ingrediant.push({
+  //     name:data.name,
+  //     amount:data.ammount
+  //   })
+  //     }
 }

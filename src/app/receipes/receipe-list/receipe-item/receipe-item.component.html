@@ -1,1 +1,15 @@
-<p>receipe-item works!</p>
+<a href="#" class="list-group-item clearfix">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="list-group-item-heading">{{rec.name}}</h4>
+      <p class="list-group-item-text">{{rec.desc}}</p>
+
+    </div>
+    <div class="col-md-4" style="text-align: center;">
+
+      <img [src]="rec.imagepath" alt="{{rec.name}}" class="img-responsive" style="max-height: 50px;">
+
+    </div>
+  </div>
+
+</a>
