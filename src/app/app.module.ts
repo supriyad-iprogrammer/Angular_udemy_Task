@@ -1,3 +1,4 @@
+import { StyleDirective } from './directive/style.directive';
 import { ReceipeItemComponent } from './receipes/receipe-list/receipe-item/receipe-item.component';
 import { ReceipeListComponent } from './receipes/receipe-list/receipe-list.component';
 import { ReceipeDetailsComponent } from './receipes/receipe-details/receipe-details.component';
@@ -12,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{HeaderComponent} from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { RenderDirective } from './directive/render.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     ReceipesComponent,
     ReceipeDetailsComponent,
     ReceipeListComponent,
-    ReceipeItemComponent
+    ReceipeItemComponent,
+    StyleDirective,
+    RenderDirective
   ],
   imports: [
     BrowserModule,
