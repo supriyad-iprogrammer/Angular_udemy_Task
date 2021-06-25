@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
+
 import { Receipe } from '../../receipe.modal';
 
 @Component({
@@ -8,9 +9,13 @@ import { Receipe } from '../../receipe.modal';
 })
 export class ReceipeItemComponent implements OnInit {
 @Input() rec!:Receipe;
+@Output() selectedReceipe=new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
   }
+  onselect(){
+    this.selectedReceipe.emit();
 
+  }
 }
