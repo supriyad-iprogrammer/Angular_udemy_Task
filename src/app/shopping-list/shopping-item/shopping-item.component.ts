@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Ingredints } from 'src/app/shared/ingrediant.modal';
 
 
@@ -9,15 +9,20 @@ import { Ingredints } from 'src/app/shared/ingrediant.modal';
 })
 export class ShoppingItemComponent implements OnInit {
 
+@ViewChild('nameInput') nameRef!:ElementRef;
 
- name='';
- ammount='';
-  ingrediant: Ingredints[]=[];
+@ViewChild('AmmountInput') ammountRef!:ElementRef;
+@Output() inputIngredients=new EventEmitter<Ingredints>();
+
   constructor() { }
   ngOnInit(): void {
   }
   save(){
+const name=this.nameRef.nativeElement.value;
+const ammount=this.ammountRef.nativeElement.value;
+const newIngrediants= new Ingredints(name,ammount);
 
+this.inputIngredients.emit( newIngrediants);
 
   }
 }

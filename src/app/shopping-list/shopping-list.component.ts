@@ -14,6 +14,10 @@ ingrediant: Ingredints[]=[
 
   ngOnInit(): void {
   }
+  newIngredients(ingredients:Ingredints){
+    this.ingrediant.push(ingredients)
+
+  }
   // ondata(data:{name:string,ammount:string}){
   //   this.ingrediant.push({
   //     name:data.name,
