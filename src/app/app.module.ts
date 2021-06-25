@@ -14,6 +14,9 @@ import { AppComponent } from './app.component';
 import{HeaderComponent} from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { RenderDirective } from './directive/render.directive';
+import { StructualDirective } from './directive/structual.directive';
+import { DropdownDirective } from './directive/dropdown.directive';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { RenderDirective } from './directive/render.directive';
     ReceipeListComponent,
     ReceipeItemComponent,
     StyleDirective,
-    RenderDirective
+    RenderDirective,
+    StructualDirective,
+    DropdownDirective
+
   ],
   imports: [
     BrowserModule,
