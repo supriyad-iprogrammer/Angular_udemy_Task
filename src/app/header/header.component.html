@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid" customDirective>
-    <div class="navbar-header" >
-      <a href="#" class="navbar-brand" > Receipe Book </a>
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand"> Receipe Book </a>
     </div>
     <ul class="navbar-nav ">
       <li class="nav-item " routerLinkActive="active">
-        <a class="nav-link"  [routerLink]="'recipe'">Recipe </a>
+        <a class="nav-link" [routerLink]="'recipe'">Recipe </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="'shopping'">Shopping list</a>
@@ -15,8 +15,9 @@
     <ul class=" navbar-nav navbar-right">
 
 
-      <li class="dropdown" appDropDown #r="appDropDown" >
-        <a class="dropdown-toggle" role="button"[defaultfontsize]="'15px'" [afterfontsize]="'20px'" style="cursor: pointer;" appRender>manage<span class="caret"></span></a>
+      <li class="dropdown" appDropDown #r="appDropDown">
+        <a class="dropdown-toggle" role="button" [defaultfontsize]="'15px'" [afterfontsize]="'20px'"
+          style="cursor: pointer;" appRender>manage<span class="caret"></span></a>
         <ul class="dropdown-menu" [ngClass]="{show:r.isOpen}">
           <li>
             <a style="cursor: pointer;">save</a>

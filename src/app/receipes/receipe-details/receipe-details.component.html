@@ -1,27 +1,25 @@
 <div class="row">
   <div class="col-xs-12">
-    <img [src]="selectedRecipe.imagepath" class="img-responsive"
-    style="max-height: 300px;">
+    <img [src]="selectedRecipe.imagepath" class="img-responsive" style="max-height: 300px;">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-<h1>
-{{selectedRecipe.name}}
-</h1>
+    <h1>
+      {{selectedRecipe.name}}
+    </h1>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
 
-    <div class="btn-group" appDropDown #r="appDropDown" >
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" >
+    <div class="btn-group" appDropDown #r="appDropDown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
         Manage
         <span class="caret"></span></button>
 
-      <ul class="dropdown-menu" style="margin-top: 39%;" [ngClass]="{'show':r.isOpen}" >
-        <li><a class="dropdown-item" style="cursor: pointer"
-          (click)="onAddShoppingList()"  >To Shopping List</a></li>
+      <ul class="dropdown-menu" style="margin-top: 39%;" [ngClass]="{'show':r.isOpen}">
+        <li><a class="dropdown-item" style="cursor: pointer" (click)="onAddShoppingList()">To Shopping List</a></li>
         <li><a class="dropdown-item" style="cursor: pointer;" (click)="editRecipe()">Edit Recipe</a></li>
         <li><a class="dropdown-item" style="cursor: pointer;">Delete Recipe</a></li>
       </ul>
@@ -29,18 +27,17 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-    {{selectedRecipe.desc}}
+      {{selectedRecipe.desc}}
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-<ul class="list-group"
->
-<li class="list-group item" *ngFor="let ingrediant of  selectedRecipe.ingrediants">
-  {{ingrediant.name}}-{{ingrediant.amount}}
-</li>
+      <ul  >
+        <li *ngFor="let ingrediant of  selectedRecipe.ingrediants">
+          {{ingrediant.name}}-{{ingrediant.amount}}
+        </li>
 
-</ul>
+      </ul>
     </div>
   </div>
 </div>
