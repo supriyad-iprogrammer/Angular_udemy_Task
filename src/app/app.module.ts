@@ -1,3 +1,5 @@
+import { ShoppingListService } from './shopping-list/shoppingList.service';
+import { RecipeService } from './receipes/recipe.service';
 import { StyleDirective } from './directive/style.directive';
 import { ReceipeItemComponent } from './receipes/receipe-list/receipe-item/receipe-item.component';
 import { ReceipeListComponent } from './receipes/receipe-list/receipe-list.component';
@@ -40,7 +42,7 @@ import { DropdownDirective } from './directive/dropdown.directive';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

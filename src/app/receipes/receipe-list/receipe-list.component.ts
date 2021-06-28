@@ -1,3 +1,4 @@
+import { RecipeService } from './../recipe.service';
 import { Component, OnInit ,EventEmitter, Output} from '@angular/core';
 
 import { Receipe } from '../receipe.modal';
@@ -8,21 +9,16 @@ import { Receipe } from '../receipe.modal';
   styleUrls: ['./receipe-list.component.css']
 })
 export class ReceipeListComponent implements OnInit {
- @Output() recepeWasSelected=new EventEmitter<Receipe>();
-receipe : Receipe[]=[
-  new Receipe('Test recipe',
-  'description',
-  'https://image.shutterstock.com/z/stock-photo-healthy-food-healthy-vegetarian-lunch-bowl-fresh-green-salad-on-dark-woden-background-banner-1921792865.jpg'),
-
-  new Receipe('Test anather recipe',
-  'description',
-  'https://image.shutterstock.com/z/stock-photo-healthy-food-healthy-vegetarian-lunch-bowl-fresh-green-salad-on-dark-woden-background-banner-1921792865.jpg')
-];
-  constructor() { }
+//  @Output() recepeWasSelected=new EventEmitter<Receipe>();
+  receipe: Receipe[] = [];
+  constructor(private recipeServive:RecipeService) { }
 
   ngOnInit(): void {
+
+this.receipe=this.recipeServive.getReipes();
   }
-  onRecipeselected(recipe:Receipe){
-this.recepeWasSelected.emit(recipe);
-  }
+//   onRecipeselected(recipe:Receipe){
+// // this.recepeWasSelected.emit(recipe);         this is remove coz we use services insted of output
+
+//   }
 }

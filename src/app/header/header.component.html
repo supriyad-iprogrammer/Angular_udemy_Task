@@ -13,9 +13,11 @@
 
     </ul>
     <ul class=" navbar-nav navbar-right">
-      <li class="dropdown" appDropdown>
+
+
+      <li class="dropdown" appDropDown #r="appDropDown" >
         <a class="dropdown-toggle" role="button"[defaultfontsize]="'15px'" [afterfontsize]="'20px'" appRender>manage<span class="caret"></span></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" [ngClass]="{show:r.isOpen}">
           <li>
             <a href="#">save</a>
           </li>
@@ -28,4 +30,5 @@
 
 
   </div>
+
 </nav>
