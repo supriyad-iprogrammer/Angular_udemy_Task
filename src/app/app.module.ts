@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { RenderDirective } from './directive/render.directive';
 import { StructualDirective } from './directive/structual.directive';
 import { DropdownDirective } from './directive/dropdown.directive';
+import { RecipeStartComponent } from './receipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { DropdownDirective } from './directive/dropdown.directive';
     StyleDirective,
     RenderDirective,
     StructualDirective,
-    DropdownDirective
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
 
   ],
   imports: [

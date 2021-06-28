@@ -10,15 +10,15 @@ import { Receipe } from '../../receipe.modal';
 })
 export class ReceipeItemComponent implements OnInit {
 @Input() rec!:Receipe;
+ @Input() index!: number;
 // @Output() selectedReceipe=new EventEmitter<void>();
   constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
   }
-  onselect(){
-    // this.selectedReceipe.emit();
+//   onselect(){
+//     // this.selectedReceipe.emit();
+// this.recipeService.recipeSelected.emit(this.rec);
+//   }
 
-
-this.recipeService.recipeSelected.emit(this.rec);
-  }
 }

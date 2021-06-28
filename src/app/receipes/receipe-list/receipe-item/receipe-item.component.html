@@ -1,4 +1,8 @@
-<a href="#" class="list-group-item clearfix" (click)="onselect()">
+<a
+style="cursor: pointer;"
+[routerLink]="[index]"
+routerLinkActive="active"
+class="list-group-item clearfix" >
   <div class="row">
     <div class="col-md-8">
       <h4 class="list-group-item-heading">{{rec.name}}</h4>
