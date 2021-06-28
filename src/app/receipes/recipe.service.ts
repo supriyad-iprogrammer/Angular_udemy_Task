@@ -1,7 +1,9 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredints } from '../shared/ingrediant.modal';
+import { ShoppingListService } from '../shopping-list/shoppingList.service';
 import { Receipe } from "./receipe.modal";
 
+@Injectable()
 export class RecipeService{
 
   recipeSelected=new EventEmitter<Receipe>();
@@ -17,8 +19,14 @@ export class RecipeService{
     'https://wallsdesk.com/wp-content/uploads/2017/01/Fast-Food-HD-Desktop.jpg',
     [      new Ingredints('salt','1'),new Ingredints('oil','2')])
   ];
+  constructor(private ShoppingService:ShoppingListService) {
+
+  }
   getReipes(){
     return this.receipe.slice();
 
+  }
+  addIngrediantstoShoppingList(ingredients:Ingredints[]){
+this.ShoppingService.addIngrediantstoRecipe(ingredients);
   }
 }
