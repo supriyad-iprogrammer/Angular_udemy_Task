@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredints } from '../shared/ingrediant.modal';
 import { ShoppingListService } from '../shopping-list/shoppingList.service';
 import { Receipe } from "./receipe.modal";
@@ -6,7 +7,7 @@ import { Receipe } from "./receipe.modal";
 @Injectable()
 export class RecipeService{
 
-  recipeSelected=new EventEmitter<Receipe>();
+
   private receipe : Receipe[]=[
     new Receipe('Pizza',
     'a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped with spiced tomato sauce and cheese, often garnished with anchovies, sausage slices, mushrooms, etc.',
