@@ -16,7 +16,10 @@ export class ReceipeItemComponent implements OnInit {
   constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
-    this.imagepath=this.rec.imagepath;
+    // debugger
+    console.log(this.rec)
+    this.imagepath=this.rec.imagePath;
+    console.log(this.imagepath)
   }
 //   onselect(){
 //     // this.selectedReceipe.emit();
