@@ -11,10 +11,12 @@ import { Receipe } from '../../receipe.modal';
 export class ReceipeItemComponent implements OnInit {
 @Input() rec!:Receipe;
  @Input() index!: number;
+ imagepath:any;
 // @Output() selectedReceipe=new EventEmitter<void>();
   constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
+    this.imagepath=this.rec.imagepath;
   }
 //   onselect(){
 //     // this.selectedReceipe.emit();

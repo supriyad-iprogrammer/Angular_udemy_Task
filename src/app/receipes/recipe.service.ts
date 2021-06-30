@@ -6,8 +6,7 @@ import { Receipe } from "./receipe.modal";
 
 @Injectable()
 export class RecipeService{
-
-
+recipeChanged=new Subject<Receipe[]>();
   private receipe : Receipe[]=[
     new Receipe('Pizza',
     'a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped with spiced tomato sauce and cheese, often garnished with anchovies, sausage slices, mushrooms, etc.',
@@ -31,6 +30,19 @@ export class RecipeService{
     return this.receipe[index];
   }
   addIngrediantstoShoppingList(ingredients:Ingredints[]){
-this.ShoppingService.addIngrediantstoRecipe(ingredients);
+  this.ShoppingService.addIngrediantstoRecipe(ingredients);
+  }
+  addRecipe(recipe:Receipe){
+    this.receipe.push(recipe);
+    this.recipeChanged.next(this.receipe.slice())
+  }
+  updateRecipe(index:number, newrecipe:Receipe){
+    this.receipe[index]=newrecipe;
+    this.recipeChanged.next(this.receipe.slice())
+  }
+  deleteRecipe(index:number,){
+    this.receipe.splice(index, 1);
+    this.recipeChanged.next(this.receipe.slice());
+
   }
 }

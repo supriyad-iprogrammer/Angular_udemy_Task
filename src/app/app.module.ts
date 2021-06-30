@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{HeaderComponent} from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenderDirective } from './directive/render.directive';
 import { StructualDirective } from './directive/structual.directive';
 import { DropdownDirective } from './directive/dropdown.directive';
@@ -44,7 +44,8 @@ import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]

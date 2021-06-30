@@ -25,4 +25,7 @@ ngOnDestroy(): void {
 this.igChanged.unsubscribe();
 
 }
+onEditItem(index:number){
+this.shopplinService.editStartting.next(index)
+}
 }
