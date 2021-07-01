@@ -1,3 +1,4 @@
+import { DatabaseService } from './../shared/database.service';
 
 import { Component ,EventEmitter, Output} from "@angular/core";
 import { Router } from "@angular/router";
@@ -15,7 +16,8 @@ export class HeaderComponent{
 // onselectshopping(){
 
 // }
-constructor(private router:Router){
+constructor(private router:Router,
+  private databaseService:DatabaseService){
 
 }
 toRecipe(){
@@ -24,4 +26,10 @@ this.router.navigate(['recipe'])
 toShoppingList(){
   this.router.navigate(['shopping'])
   }
+  storeRecipe(){
+this.databaseService.createRecipe();
+  }
+  fetchRecipe(){
+    this.databaseService.getdata();
+}
 }

@@ -20,10 +20,10 @@
           style="cursor: pointer;" appRender>manage<span class="caret"></span></a>
         <ul class="dropdown-menu" [ngClass]="{show:r.isOpen}">
           <li>
-            <a style="cursor: pointer;">save</a>
+            <a style="cursor: pointer;" (click)="storeRecipe()">save</a>
           </li>
           <li>
-            <a style="cursor: pointer;">fetch</a>
+            <a style="cursor: pointer;" (click)="fetchRecipe()">fetch</a>
           </li>
         </ul>
       </li>

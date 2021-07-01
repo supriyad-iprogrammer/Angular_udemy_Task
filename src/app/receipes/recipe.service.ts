@@ -22,6 +22,10 @@ recipeChanged=new Subject<Receipe[]>();
   constructor(private ShoppingService:ShoppingListService) {
 
   }
+  setRecipe(recipe:Receipe[]){
+this.receipe=recipe;
+this.recipeChanged.next(this.receipe.slice());
+  }
   getReipes(){
     return this.receipe.slice();
 

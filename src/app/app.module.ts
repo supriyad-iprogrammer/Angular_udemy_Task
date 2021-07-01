@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ShoppingListService } from './shopping-list/shoppingList.service';
 import { RecipeService } from './receipes/recipe.service';
 import { StyleDirective } from './directive/style.directive';
@@ -45,7 +46,8 @@ import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
