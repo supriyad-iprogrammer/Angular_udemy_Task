@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid" customDirective>
     <div class="navbar-header">
-      <a href="#" class="navbar-brand"> Receipe Book </a>
+      <a class="navbar-brand"> Receipe Book </a>
     </div>
     <ul class="navbar-nav ">
       <li class="nav-item " routerLinkActive="active">
-        <a class="nav-link" routerLink="/recipe">Recipe </a>
+        <a class="nav-link" (click)="toRecipe()">Recipe </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/shopping">Shopping list</a>
+        <a class="nav-link" (click)="toShoppingList()">Shopping list</a>
       </li>
 
     </ul>

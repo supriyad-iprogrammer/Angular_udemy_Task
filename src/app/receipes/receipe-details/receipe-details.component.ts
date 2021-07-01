@@ -24,7 +24,8 @@ id!:number;
   }
   onAddShoppingList(){
     console.log("ingrediants details");
-   this.recipeService.addIngrediantstoShoppingList(this.selectedRecipe.ingrediants)
+   this.recipeService.addIngrediantstoShoppingList(this.selectedRecipe.ingrediants);
+   this.router.navigate(['/shopping']);
   }
   editRecipe(){
     this.router.navigate(['../', this.id,'edit'] ,{relativeTo:this.route})

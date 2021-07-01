@@ -1,5 +1,6 @@
 
 import { Component ,EventEmitter, Output} from "@angular/core";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -14,4 +15,13 @@ export class HeaderComponent{
 // onselectshopping(){
 
 // }
+constructor(private router:Router){
+
+}
+toRecipe(){
+this.router.navigate(['recipe'])
+}
+toShoppingList(){
+  this.router.navigate(['shopping'])
+  }
 }
