@@ -28,6 +28,9 @@ this.router.navigate(['recipe']);
 toShoppingList(){
   this.router.navigate(['shopping'])
   }
+  toAuthenticate(){
+    this.router.navigate(['auth'])
+  }
   storeRecipe(){
    this.databaseService.createRecipe();
   }

@@ -1,3 +1,4 @@
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner/loading-spinner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShoppingListService } from './shopping-list/shoppingList.service';
 import { RecipeService } from './receipes/recipe.service';
@@ -21,6 +22,7 @@ import { StructualDirective } from './directive/structual.directive';
 import { DropdownDirective } from './directive/dropdown.directive';
 import { RecipeStartComponent } from './receipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.componen
     StructualDirective,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
 
   ],
   imports: [
