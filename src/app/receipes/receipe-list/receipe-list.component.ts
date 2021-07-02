@@ -19,11 +19,12 @@ export class ReceipeListComponent implements OnInit , OnDestroy {
     private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-this.recipeServive.recipeChanged.subscribe((recipe:Receipe[])=>{
+this.recipeServive.recipeChanged.subscribe(
+  (recipe:Receipe[])=>{
   this.receipe=recipe;
   console.log(this.receipe)
 })
-this.receipe=this.recipeServive.getReipes();
+this.receipe=this.recipeServive.getRecipes();
   }
 //   onRecipeselected(recipe:Receipe){
 // // this.recepeWasSelected.emit(recipe);         this is remove coz we use services insted of output

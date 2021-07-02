@@ -16,20 +16,22 @@ export class HeaderComponent{
 // onselectshopping(){
 
 // }
+
+
 constructor(private router:Router,
   private databaseService:DatabaseService){
 
 }
 toRecipe(){
-this.router.navigate(['recipe'])
+this.router.navigate(['recipe']);
 }
 toShoppingList(){
   this.router.navigate(['shopping'])
   }
   storeRecipe(){
-this.databaseService.createRecipe();
+   this.databaseService.createRecipe();
   }
   fetchRecipe(){
-    this.databaseService.getdata();
+    this.databaseService.getdata()
 }
 }

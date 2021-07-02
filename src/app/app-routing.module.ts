@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.component';
+import { ResolverService } from './shared/resolver.service';
 
 const routes: Routes = [
 {path:'', redirectTo:'/recipe',pathMatch:'full'},
@@ -15,8 +16,8 @@ const routes: Routes = [
     {path:'' ,component: RecipeStartComponent},
     {path:'new' ,component: RecipeEditComponent},
 
-    {path:':id' ,component: ReceipeDetailsComponent},
-    {path:':id/edit' ,component: RecipeEditComponent}
+    {path:':id' ,component: ReceipeDetailsComponent, resolve:[ResolverService]},
+    {path:':id/edit' ,component: RecipeEditComponent, resolve:[ResolverService]}
 
 
   ]},
