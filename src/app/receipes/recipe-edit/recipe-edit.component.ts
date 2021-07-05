@@ -64,7 +64,7 @@ export class RecipeEditComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.recipeForm)
-
+debugger
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value)
     }
@@ -86,6 +86,7 @@ export class RecipeEditComponent implements OnInit {
 
   }
   onDelete(index: number) {
+
     (<FormArray>this.recipeForm.get('ingrediants')).removeAt(index)
       ;
   }

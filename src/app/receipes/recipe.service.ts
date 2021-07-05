@@ -28,7 +28,6 @@ this.receipe=recipe;
 this.recipeChanged.next(this.receipe.slice());
   }
   getRecipes() {
-
     return this.receipe.slice();
   }
 
@@ -48,7 +47,7 @@ this.recipeChanged.next(this.receipe.slice());
     this.recipeChanged.next(this.receipe.slice())
   }
   deleteRecipe(index:number){
-    this.receipe.splice(index, 1);
+    this.receipe.splice(index,1);
     this.recipeChanged.next(this.receipe.slice());
 
   }

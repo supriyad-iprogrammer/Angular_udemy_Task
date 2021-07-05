@@ -19,7 +19,7 @@ export class ReceipeItemComponent implements OnInit {
     // debugger
     console.log(this.rec)
     this.imagepath=this.rec.imagePath;
-    console.log(this.imagepath)
+    // console.log(this.imagepath)
   }
 //   onselect(){
 //     // this.selectedReceipe.emit();

@@ -28,11 +28,15 @@ id!:number;
    this.router.navigate(['/shopping']);
   }
   editRecipe(){
-    this.router.navigate(['edit'], {relativeTo: this.route});
-    // this.router.navigate(['../', this.id,'edit'] ,{relativeTo:this.route})
+    // debugger
+    // this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['../', this.id,'edit'] ,{relativeTo:this.route})
   }
   DeleteRecipe(){
+    console.log("hiiiiii")
+    // debugger
     this.recipeService.deleteRecipe(this.id);
+    console.log( this.recipeService.deleteRecipe(this.id))
     this.router.navigate(['/recipe'])
   }
 }
