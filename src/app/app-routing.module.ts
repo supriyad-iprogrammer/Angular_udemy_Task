@@ -9,11 +9,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.component';
 import { ResolverService } from './shared/resolver.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipe', pathMatch: 'full' },
   {
-    path: 'recipe', component: ReceipesComponent, children: [
+    path: 'recipe', component: ReceipesComponent,canActivate:[AuthGuardService], children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },
       { path: ':id', component: ReceipeDetailsComponent, resolve: [ResolverService] },

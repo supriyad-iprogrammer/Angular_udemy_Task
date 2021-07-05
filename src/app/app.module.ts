@@ -1,3 +1,4 @@
+import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner/loading-spinner.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,6 +25,7 @@ import { DropdownDirective } from './directive/dropdown.directive';
 import { RecipeStartComponent } from './receipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './receipes/recipe-edit/recipe-edit.component';
 import { AuthComponent } from './auth/auth.component';
+import { AlertComponent } from './shared/alert/alert.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { AuthComponent } from './auth/auth.component';
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
 
   ],
   imports: [

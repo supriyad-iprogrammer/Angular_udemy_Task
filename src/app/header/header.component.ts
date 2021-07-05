@@ -44,7 +44,8 @@ toShoppingList(){
   this.router.navigate(['shopping'])
   }
   toAuthenticate(){
-    this.router.navigate(['auth'])
+    console.log("authenticate ")
+    this.router.navigate(['/auth'])
   }
   storeRecipe(){
     // debugger

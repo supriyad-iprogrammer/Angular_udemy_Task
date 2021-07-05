@@ -11,7 +11,7 @@
         <a class="nav-link" (click)="toShoppingList()">Shopping list</a>
       </li>
       <li class="nav-item" routerLinkActive="active" *ngIf="!isAuthenticate">
-        <a class="nav-link" (click)="toAuthenticate()">Authenticate</a>
+        <a class="nav-link"  routerLink="/auth">Authenticate</a>
       </li>
     </ul>
     <ul class=" navbar-nav navbar-right">
