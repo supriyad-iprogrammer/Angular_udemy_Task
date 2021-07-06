@@ -2,12 +2,13 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Ingredints } from '../shared/ingrediant.modal';
 import { ShoppingListService } from '../shopping-list/shoppingList.service';
-import { Receipe } from "./receipe.modal";
+import {  Recipe } from "./receipe.modal";
 
 @Injectable()
 export class RecipeService{
-recipeChanged=new Subject<Receipe[]>();
-private receipe: Receipe[] = [];
+// recipeChanged=new Subject<Receipe[]>();
+recipesChanged = new Subject<Recipe[]>();
+private recipes: Recipe[] = [];
   // =[
   //   new Receipe('Pizza',
   //   'a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped with spiced tomato sauce and cheese, often garnished with anchovies, sausage slices, mushrooms, etc.',
@@ -23,32 +24,36 @@ private receipe: Receipe[] = [];
   constructor(private ShoppingService:ShoppingListService) {
 
   }
-  setRecipe(recipe:Receipe[]){
-this.receipe=recipe;
-this.recipeChanged.next(this.receipe.slice());
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
+
   getRecipes() {
-    return this.receipe.slice();
+    return this.recipes.slice();
   }
 
   getRecipe(index: number) {
-    return this.receipe[index];
+    return this.recipes[index];
   }
 
   addIngrediantstoShoppingList(ingredients:Ingredints[]){
   this.ShoppingService.addIngrediantstoRecipe(ingredients);
   }
-  addRecipe(recipe:Receipe){
-    this.receipe.push(recipe);
-    this.recipeChanged.next(this.receipe.slice())
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.recipes.slice());
   }
-  updateRecipe(index:number, newrecipe:Receipe){
-    this.receipe[index]=newrecipe;
-    this.recipeChanged.next(this.receipe.slice())
-  }
-  deleteRecipe(index:number){
-    this.receipe.splice(index,1);
-    this.recipeChanged.next(this.receipe.slice());
 
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  deleteRecipe(index: number) {
+
+    this.recipes.splice(index, 1);
+    console.log(  this.recipes)
+    this.recipesChanged.next(this.recipes.slice());
   }
 }

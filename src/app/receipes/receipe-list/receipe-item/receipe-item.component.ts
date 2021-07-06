@@ -1,7 +1,7 @@
 import { RecipeService } from './../../recipe.service';
 import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
 
-import { Receipe } from '../../receipe.modal';
+import { Recipe } from '../../receipe.modal';
 
 @Component({
   selector: 'app-receipe-item',
@@ -9,21 +9,15 @@ import { Receipe } from '../../receipe.modal';
   styleUrls: ['./receipe-item.component.css']
 })
 export class ReceipeItemComponent implements OnInit {
-@Input() rec!:Receipe;
- @Input() index!: number;
- imagepath:any;
+@Input() rec:Recipe;
+ @Input() index: number;
+
 // @Output() selectedReceipe=new EventEmitter<void>();
   constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
-    // debugger
-    console.log(this.rec)
-    this.imagepath=this.rec.imagePath;
-    // console.log(this.imagepath)
+
   }
-//   onselect(){
-//     // this.selectedReceipe.emit();
-// this.recipeService.recipeSelected.emit(this.rec);
-//   }
+
 
 }

@@ -1,7 +1,7 @@
 import { Ingredints } from 'src/app/shared/ingrediant.modal';
 
 
-export class Receipe{
+export class Recipe{
 
 public name:string;
 public desc:string;

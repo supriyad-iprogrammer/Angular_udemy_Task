@@ -1,5 +1,5 @@
 import { RecipeService } from './../recipe.service';
-import { Receipe } from './../receipe.modal';
+import { Recipe } from './../receipe.modal';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute,Params, Router } from '@angular/router';
 
@@ -10,8 +10,8 @@ import { ActivatedRoute,Params, Router } from '@angular/router';
 })
 export class ReceipeDetailsComponent implements OnInit {
 
-selectedRecipe!:Receipe;
-id!:number;
+selectedRecipe:Recipe;
+id:number;
   constructor(private recipeService:RecipeService,
     private route :ActivatedRoute,
     private router:Router) { }
@@ -19,7 +19,9 @@ id!:number;
   ngOnInit(): void {
   this.route.params.subscribe((param:Params)=>{
     this.id=+param['id'];
+    console.log(this.id);
     this.selectedRecipe=this.recipeService.getRecipe(this.id)
+   console.log(this.selectedRecipe)
   })
   }
   onAddShoppingList(){
@@ -29,14 +31,18 @@ id!:number;
   }
   editRecipe(){
     // debugger
-    // this.router.navigate(['edit'], {relativeTo: this.route});
-    this.router.navigate(['../', this.id,'edit'] ,{relativeTo:this.route})
+    this.router.navigate(['edit'], {relativeTo: this.route});
+    // this.router.navigate(['../', this.id,'edit'] ,{relativeTo:this.route})
   }
   DeleteRecipe(){
     console.log("hiiiiii")
     // debugger
+     console.log(this.id);
     this.recipeService.deleteRecipe(this.id);
-    console.log( this.recipeService.deleteRecipe(this.id))
-    this.router.navigate(['/recipe'])
+    console.log( this.recipeService.deleteRecipe(this.id));
+
+
+    this.router.navigate(['recipe'])
+
   }
 }
