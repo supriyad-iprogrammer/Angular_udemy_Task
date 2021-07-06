@@ -12,7 +12,7 @@ declarations:[
   ShoppingListComponent,
 ],
 imports:[RouterModule.forChild([
-  { path: 'shopping', component: ShoppingListComponent }
+  { path: '', component: ShoppingListComponent }
 ]),SharedModule,FormsModule],
 exports:[
   ShoppingItemComponent,

@@ -9,7 +9,7 @@ import { ResolverService } from '../shared/resolver.service';
 
 const route:Routes=[
   {
-    path: 'recipe', component: ReceipesComponent,canActivate:[AuthGuardService], children: [
+    path: '', component: ReceipesComponent,canActivate:[AuthGuardService], children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },
       { path: ':id', component: ReceipeDetailsComponent, resolve: [ResolverService] },
