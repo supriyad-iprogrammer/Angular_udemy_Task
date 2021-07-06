@@ -1,6 +1,4 @@
 import { SharedModule } from './shared/sharedModule.module';
-
-
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
