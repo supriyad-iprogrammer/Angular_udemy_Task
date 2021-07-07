@@ -8,7 +8,7 @@ import {  Recipe } from "./receipe.modal";
 export class RecipeService{
 // recipeChanged=new Subject<Receipe[]>();
 recipesChanged = new Subject<Recipe[]>();
-private recipes: Recipe[] = [];
+
   // =[
   //   new Receipe('Pizza',
   //   'a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped with spiced tomato sauce and cheese, often garnished with anchovies, sausage slices, mushrooms, etc.',
@@ -21,6 +21,7 @@ private recipes: Recipe[] = [];
   //   'https://wallsdesk.com/wp-content/uploads/2017/01/Fast-Food-HD-Desktop.jpg',
   //   [      new Ingredints('salt','1'),new Ingredints('oil','2')])
   // ];
+  private recipes: Recipe[] = [];
   constructor(private ShoppingService:ShoppingListService) {
 
   }
@@ -46,12 +47,13 @@ private recipes: Recipe[] = [];
   }
 
   updateRecipe(index: number, newRecipe: Recipe) {
+    debugger
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }
 
   deleteRecipe(index: number) {
-
+debugger
     this.recipes.splice(index, 1);
     console.log(  this.recipes)
     this.recipesChanged.next(this.recipes.slice());

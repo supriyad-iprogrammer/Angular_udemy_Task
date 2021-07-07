@@ -49,9 +49,7 @@ toShoppingList(){
   }
   storeRecipe(){
     // debugger
-   this.databaseService.createRecipe().subscribe(response => {
-    console.log(response)
-  });;
+   this.databaseService.createRecipe()
   }
   fetchRecipe(){
     // debugger

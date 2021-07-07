@@ -42,7 +42,7 @@ id:number;
     console.log( this.recipeService.deleteRecipe(this.id));
 
 
-    this.router.navigate(['recipe'])
+    this.router.navigate(['/recipe'])
 
   }
 }

@@ -24,7 +24,7 @@ private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router:Router) { }
   signup(email: string, password: string) {
-    return this.http.post<AuthResposeData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+ environment.firebaseAPIKey,
+    return this.http.post<AuthResposeData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDZ4akeAmSGzzOv1QKe8PTC4uJnmI118k0',
       {
         email: email,
         password: password,
@@ -37,7 +37,7 @@ private tokenExpirationTimer: any;
   }
 
   login(email: string, password: string) {
-    return this.http.post<AuthResposeData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey, {
+    return this.http.post<AuthResposeData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDZ4akeAmSGzzOv1QKe8PTC4uJnmI118k0', {
       email: email,
       password: password,
       returnSecureToken: true

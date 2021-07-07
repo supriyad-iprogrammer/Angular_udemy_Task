@@ -12,7 +12,8 @@ import { RecipeService } from '../receipes/recipe.service';
 })
 export class ResolverService implements Resolve<Recipe[]> {
 
-  constructor(private dataservice:DatabaseService,   private recipesService: RecipeService) { }
+  constructor(private dataservice:DatabaseService,
+     private recipesService: RecipeService) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const recipes = this.recipesService.getRecipes();
 

@@ -23,8 +23,10 @@ export class DatabaseService {
 // const httpOptions = {
 //   headers: headers_object
 // };
-    return this.http.put('https://angular-practice-74410-default-rtdb.firebaseio.com/recipes.json',
-    recipe)
+     this.http.put('https://angular-practice-74410-default-rtdb.firebaseio.com/recipes.json',
+    recipe) .subscribe(response => {
+      console.log(response);
+    });
   }
 
   getdata() {
