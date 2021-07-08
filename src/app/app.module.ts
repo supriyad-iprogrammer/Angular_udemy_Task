@@ -9,7 +9,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
 import { StoreModule } from '@ngrx/store';
-import { shoppingListReducer } from './shopping-list/store/shoppingList.reducer';
+
+import * as fromApp from './store/app.reducer'
+import { EffectsModule } from '@ngrx/effects';
+// import { AuthEffects } from './auth/store/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +24,10 @@ import { shoppingListReducer } from './shopping-list/store/shoppingList.reducer'
     AppRoutingModule,
 
     HttpClientModule,
-    StoreModule.forRoot({shoppingList:shoppingListReducer}),
+    StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     CoreModule,
+    // EffectsModule.forRoot([AuthEffects])
  ],
 
   bootstrap: [AppComponent]

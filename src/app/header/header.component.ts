@@ -1,10 +1,12 @@
+import { map } from 'rxjs/operators';
 import { DatabaseService } from './../shared/database.service';
 
 import { Component ,EventEmitter, OnDestroy, OnInit, Output} from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthServiceService } from '../auth/auth-service.service';
 import { Subscription } from 'rxjs';
-
+import * as fromApp from '../store/app.reducer';
+import { Store } from '@ngrx/store';
 
 @Component({
 selector:'app-header',
@@ -22,12 +24,13 @@ private Usersub!:Subscription;
  isAuthenticate=false;
 constructor(private router:Router,
   private databaseService:DatabaseService,
-  private authService:AuthServiceService){
+  private authService:AuthServiceService,
+  private store:Store<fromApp.AppState>){
 
 }
 ngOnInit(): void {
 
- this.Usersub =this.authService.user.subscribe(user=>{
+ this.Usersub =this.store.select('auth').pipe(map(authState=>authState.user)).subscribe(user=>{
   this.isAuthenticate =!!user;
   console.log(!user);
   console.log(!!user);

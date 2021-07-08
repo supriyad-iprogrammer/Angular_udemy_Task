@@ -2,10 +2,10 @@
 
 export class Ingredints{
   public name:string;
-  public amount:string;
+  public amount:number;
 
 
-  constructor(name:string, amunt:string,){
+  constructor(name:string, amunt:number,){
     this.name=name;
  this.amount=amunt;
   }

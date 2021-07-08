@@ -5,6 +5,8 @@ import { Ingredints } from '../shared/ingrediant.modal';
 import {  Recipe } from "./receipe.modal";
 import * as ShoppingListActions from '../shopping-list/store/shoppingList.action';
 import * as fromShoppinList from '../shopping-list/store/shoppingList.reducer';
+
+import * as fromApp from '../store/app.reducer'
 @Injectable()
 export class RecipeService{
 // recipeChanged=new Subject<Receipe[]>();
@@ -24,7 +26,7 @@ recipesChanged = new Subject<Recipe[]>();
   // ];
   private recipes: Recipe[] = [];
   constructor(
-    private store:Store<fromShoppinList.AppState>) {
+    private store:Store<fromApp.AppState>) {
 
   }
   setRecipes(recipes: Recipe[]) {
@@ -50,13 +52,13 @@ this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients))
   }
 
   updateRecipe(index: number, newRecipe: Recipe) {
-    debugger
+    // debugger
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }
 
   deleteRecipe(index: number) {
-debugger
+// debugger
     this.recipes.splice(index, 1);
     console.log(  this.recipes)
     this.recipesChanged.next(this.recipes.slice());
