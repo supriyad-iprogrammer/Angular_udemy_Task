@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import * as fromApp from '../store/app.reducer';
 import { Store } from '@ngrx/store';
 import * as AuthAction from '../auth/store/auth.action'
+import * as RecipeAction from '../../app/receipes/store/recipe.action'
 @Component({
 selector:'app-header',
 templateUrl:'./header.component.html'
@@ -56,7 +57,8 @@ toShoppingList(){
   }
   fetchRecipe(){
     // debugger
-    this.databaseService.getdata().subscribe();
+    // this.databaseService.getdata().subscribe();
+    this.store.dispatch(new RecipeAction.FetchRecipe())
 }
 logout(){
   // this.authService.logOut();

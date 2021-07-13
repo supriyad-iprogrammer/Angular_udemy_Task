@@ -1,3 +1,4 @@
+import { Store } from '@ngrx/store';
 import { Params } from '@angular/router';
 import { catchError, exhaustMap, map, take, tap } from 'rxjs/operators';
 import { RecipeService } from './../receipes/recipe.service';
@@ -6,6 +7,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, throwError } from 'rxjs';
 import { AuthServiceService } from '../auth/auth-service.service';
+import * as fromApp from '../store/app.reducer';
+import * as RecipeActions from '../receipes/store/recipe.action'
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +16,8 @@ export class DatabaseService {
   error = new Subject<any>();
 
   constructor(private http: HttpClient, private recipeService: RecipeService,
-    private authService:AuthServiceService) { }
+    private authService:AuthServiceService,
+    private store:Store<fromApp.AppState>) { }
 
   createRecipe() {
     const recipe = this.recipeService.getRecipes();
@@ -44,7 +48,8 @@ export class DatabaseService {
         });
       }),
       tap(recipes => {
-        this.recipeService.setRecipes(recipes);
+        // this.recipeService.setRecipes(recipes);
+        this.store.dispatch(new RecipeActions.SetRecipes(recipes))
       })
     );
   }

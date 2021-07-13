@@ -1,9 +1,12 @@
+import { map } from 'rxjs/operators';
 import { RecipeService } from './../recipe.service';
 import { Component, OnInit ,EventEmitter, Output, OnDestroy} from '@angular/core';
 
 import { Recipe } from '../receipe.modal';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../store/app.reducer';
 
 @Component({
   selector: 'app-receipe-list',
@@ -16,15 +19,16 @@ export class ReceipeListComponent implements OnInit , OnDestroy {
   subscription:Subscription;
   constructor(private recipeServive:RecipeService,
     private router:Router,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute,
+    private store:Store<fromApp.AppState>) { }
 
   ngOnInit(): void {
-this.subscription= this.recipeServive.recipesChanged.subscribe(
+this.subscription= this.store.select('recipes').pipe(map(recipesState=>recipesState.recipes)).subscribe(
   (recipe:Recipe[])=>{
   this.receipe=recipe;
   console.log(this.receipe)
 })
-this.receipe=this.recipeServive.getRecipes();
+// this.receipe=this.recipeServive.getRecipes();
   }
 //   onRecipeselected(recipe:Receipe){
 // // this.recepeWasSelected.emit(recipe);         this is remove coz we use services insted of output
