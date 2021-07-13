@@ -7,7 +7,7 @@ import { AuthServiceService } from '../auth/auth-service.service';
 import { Subscription } from 'rxjs';
 import * as fromApp from '../store/app.reducer';
 import { Store } from '@ngrx/store';
-
+import * as AuthAction from '../auth/store/auth.action'
 @Component({
 selector:'app-header',
 templateUrl:'./header.component.html'
@@ -59,6 +59,7 @@ toShoppingList(){
     this.databaseService.getdata().subscribe();
 }
 logout(){
-  this.authService.logOut();
-}
+  // this.authService.logOut();
+
+this.store.dispatch(new AuthAction.Logout())}
 }

@@ -12,7 +12,8 @@ import { StoreModule } from '@ngrx/store';
 
 import * as fromApp from './store/app.reducer'
 import { EffectsModule } from '@ngrx/effects';
-// import { AuthEffects } from './auth/store/auth.effects';
+ import { AuthEffects } from './auth/store/auth.effects';
+// import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     CoreModule,
-    // EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects]),
+    // ToastrModule.forRoot()
  ],
 
   bootstrap: [AppComponent]
